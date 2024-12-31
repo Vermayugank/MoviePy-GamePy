@@ -8,8 +8,8 @@ async def main(rows, columns, cell_size=30):
     pygame.init()
 
     
-    # pygame.mixer.music.load("background.wav")
-    # pygame.mixer.music.play(-1)
+    pygame.mixer.music.load("background.wav")
+    pygame.mixer.music.play(-1)
 
     # Grid dimensions
     width = columns * cell_size
