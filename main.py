@@ -1,14 +1,15 @@
 import pygame
 import random
 import sys
+import asyncio
 
-def main(rows, columns, cell_size=30):
+async def main(rows, columns, cell_size=30):
     # Initialize pygame
     pygame.init()
 
     
-    pygame.mixer.music.load("background.wav")
-    pygame.mixer.music.play(-1)
+    # pygame.mixer.music.load("background.wav")
+    # pygame.mixer.music.play(-1)
 
     # Grid dimensions
     width = columns * cell_size
@@ -86,9 +87,11 @@ def main(rows, columns, cell_size=30):
         clock.tick(5)
 
     pygame.quit()
+    await asyncio.sleep(0)
+
 
 if __name__ == "__main__":
     # Example usage: 10x10 grid
     rows = 20
     columns = 15
-    main(rows, columns)
+    asyncio.run(main(rows, columns))
