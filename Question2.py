@@ -4,10 +4,10 @@ import cv2
 def applyTransitions(video):
     # Create subclips and apply effects
     clips = [
-        video.subclipped(26, 32).with_effects([vfx.CrossFadeOut(2)]),
-        video.subclipped(96, 103).with_start(1).with_effects([vfx.CrossFadeIn(5)]),
+        video.subclipped(26, 32).with_effects([vfx.CrossFadeOut(2)]), # crossFade Effect
+        video.subclipped(96, 103).with_start(1).with_effects([vfx.CrossFadeIn(5)]), #CrossFadeIn Effect
         video.subclipped(98,101).with_effects([vfx.MirrorX()]),
-        video.subclipped(91, 93).with_effects([vfx.MultiplySpeed(0.5)]).with_effects([vfx.CrossFadeIn(3)]),
+        video.subclipped(91, 93).with_effects([vfx.MultiplySpeed(0.5)]).with_effects([vfx.CrossFadeIn(3)]), #Slow down the clip spedd with CrossFadeIn effct
     ]
     # Concatenate the clips
     final_clip = concatenate_videoclips(clips, method="compose")
